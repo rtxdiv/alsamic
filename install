@@ -1,0 +1,27 @@
+#!/bin/bash
+
+GREEN='\033[0;32m'
+RESET='\033[0m'
+
+SCRIPT_NAME="alsamic"
+SCRIPT_SOURCE="$(dirname "$0")/${SCRIPT_NAME}"
+SOUNDS_SOURCE_DIR="$(dirname "$0")/sounds"
+
+SCRIPT_DIR="/usr/local/bin"
+SOUNDS_DIR="/usr/local/share/${SCRIPT_NAME}"
+
+echo "Installing..."
+
+sudo true
+
+sudo cp "$SCRIPT_SOURCE" "${SCRIPT_DIR}/${SCRIPT_NAME}"
+sudo chmod 755 "${SCRIPT_DIR}/${SCRIPT_NAME}"
+
+sudo mkdir -p "$SOUNDS_DIR"
+sudo cp -r "$SOUNDS_SOURCE_DIR"/* "$SOUNDS_DIR/"
+sudo chmod 644 "$SOUNDS_DIR"/*
+
+echo -e "${GREEN}Successful!${RESET}"
+echo "| Script path: ${SCRIPT_DIR}/${SCRIPT_NAME}"
+echo "| Sounds path: ${SOUNDS_DIR}/"
+alsamic

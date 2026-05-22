@@ -4,4 +4,10 @@
 Звуковые оповещения: **Discord**<br>
 *(для касомизации замените файлы mute.wav и unmute.wav)*
 
-#### Для использования достаточно скопировать проект и создать сочетание клавиш с запуском microphone.sh
+### Установка
+
+Выполните эти команды по порядку:
+
+- git clone https://github.com/rtxdiv/alsamic
+- ./alsamic/install
+- rm -rf ./alsamic
