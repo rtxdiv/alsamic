@@ -12,20 +12,20 @@ case "$1" in
         echo "{\"text\": \"$status\", \"alt\": \"$status\", \"class\": \"$status\"}"
         ;;
     on)
-        amixer set Capture unmute
+        amixer set Capture cap
         aplay "$SOUNDS_DIR/unmute.wav"
         ;;
     off)
-        amixer set Capture mute
+        amixer set Capture nocap
         aplay "$SOUNDS_DIR/mute.wav"
         ;;
     toggle)
         status=$(get_status)
         if [[ "$status" == "on" ]]; then
-            amixer set Capture mute
+            amixer set Capture nocap
             aplay "$SOUNDS_DIR/mute.wav"
         else
-            amixer set Capture unmute
+            amixer set Capture cap
             aplay "$SOUNDS_DIR/unmute.wav"
         fi
         ;;
